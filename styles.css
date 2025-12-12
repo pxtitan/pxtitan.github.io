@@ -1,0 +1,330 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 40px;
+    border: 2px solid #333;
+    box-shadow: 4px 4px 0 #333;
+}
+
+/* Introduction Section */
+.intro-section {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #333;
+}
+
+.osho-photo {
+    margin-bottom: 20px;
+}
+
+.osho-photo img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid #333;
+    object-fit: cover;
+    background-color: #e0e0e0;
+}
+
+.intro-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.intro-text p {
+    margin-bottom: 15px;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+/* Language Selector */
+.language-selector {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.language-selector h2 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.language-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.lang-btn {
+    padding: 12px 30px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.lang-btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.lang-btn.active {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Links Manager */
+.links-manager {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 2px solid #333;
+    background-color: #fafafa;
+}
+
+.links-manager h3 {
+    font-size: 1em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#audioLinks {
+    width: 100%;
+    height: 150px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    padding: 10px;
+    border: 2px solid #333;
+    resize: vertical;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+#loadLinks {
+    padding: 10px 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+#loadLinks:hover {
+    background-color: #555;
+    border-color: #555;
+}
+
+.links-note {
+    margin: 20px 0;
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: #f7f9fc;
+}
+
+.links-note h3 {
+    margin: 0 0 6px;
+    font-size: 1.1rem;
+}
+
+/* Audio Container */
+.audio-container {
+    margin-bottom: 30px;
+}
+
+.audio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #333;
+}
+
+.audio-header h2 {
+    font-size: 1.3em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.select-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.select-controls button {
+    padding: 8px 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85em;
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.select-controls button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Audio List */
+.audio-list {
+    max-height: 500px;
+    overflow-y: auto;
+    border: 2px solid #333;
+    padding: 15px;
+    background-color: #fafafa;
+}
+
+.audio-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border: 1px solid #333;
+    transition: all 0.2s ease;
+}
+
+.audio-item:hover {
+    background-color: #f0f0f0;
+    transform: translateX(5px);
+}
+
+.audio-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.audio-item label {
+    flex: 1;
+    cursor: pointer;
+    font-size: 0.95em;
+}
+
+/* Download Section */
+.download-section {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 2px solid #333;
+}
+
+.download-btn {
+    padding: 15px 40px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1em;
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.download-btn:hover {
+    background-color: #555;
+    border-color: #555;
+    box-shadow: 2px 2px 0 #333;
+}
+
+.download-btn:disabled {
+    background-color: #999;
+    border-color: #999;
+    cursor: not-allowed;
+}
+
+.selected-count {
+    font-size: 0.95em;
+    color: #666;
+}
+
+.selected-count span {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+    font-style: italic;
+}
+
+/* Scrollbar Styling */
+.audio-list::-webkit-scrollbar {
+    width: 10px;
+}
+
+.audio-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border: 1px solid #333;
+}
+
+.audio-list::-webkit-scrollbar-thumb {
+    background: #333;
+}
+
+.audio-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .audio-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .language-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .lang-btn {
+        width: 100%;
+    }
+
+    .intro-text h1 {
+        font-size: 2em;
+    }
+}
