@@ -1,0 +1,16 @@
+{
+  "name": "Osho
+audio",
+  "short_name": "Osho-audiobooks",
+  "icons": [
+    {
+      "src": "osho.jpg",
+      "sizes": "192x192",
+      "type": "image/jpg"
+    },
+    
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
