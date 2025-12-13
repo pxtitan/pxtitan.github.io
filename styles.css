@@ -4,9 +4,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+@font-face {
+  font-family: 'MonoLisa'; /* Your chosen name */
+  src: url('MonoLisa/MonoLisa-Regular.woff2') format('woff2'),
+       url('MonoLisa/MonoLisa-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'MonoLisa' 'Courier New', Courier, monospace;
     background-color: #f5f5f5;
     color: #333;
     line-height: 1.6;
