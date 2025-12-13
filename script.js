@@ -29,6 +29,12 @@ const audioLinksData = {
     hindi: parsePredefinedLinks(preloaded.hindi || preloaded.hindiText)
 };
 
+// Set to your Railway domain (e.g., "https://your-app.up.railway.app") to route downloads through the /download proxy.
+const RAILWAY_DOMAIN = "";
+
+const buildDownloadUrl = (url) =>
+    RAILWAY_DOMAIN ? `${RAILWAY_DOMAIN}/download?url=${encodeURIComponent(url)}` : url;
+
 let currentLanguage = 'english';
 let currentSearch = '';
 
@@ -122,7 +128,7 @@ function updateSelectedCount() {
 function downloadSelected() {
     const checkboxes = audioList.querySelectorAll('input[type="checkbox"]:checked');
     if (checkboxes.length === 0) return;
-    const urls = Array.from(checkboxes).map(cb => cb.dataset.url);
+    const urls = Array.from(checkboxes).map(cb => buildDownloadUrl(cb.dataset.url));
     urls.forEach((url, index) => {
         setTimeout(() => {
             const win = window.open(url, '_blank', 'noopener');

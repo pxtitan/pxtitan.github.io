@@ -1,0 +1,16 @@
+{
+  "name": "osho-download-server",
+  "version": "1.0.0",
+  "description": "Proxy downloader for Osho discourse audio files.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
