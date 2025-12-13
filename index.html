@@ -1,88 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Osho Discourses - Download Center</title>
-    <link rel="icon" type="image/png" href="favicon/osho-512x512.png">
-    <link rel="manifest" href="favicon/site.webmanifest">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon/osho-512x512.png" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Download Osho discourses in English and Hindi. Browse, search, and select talks to download instantly.">
-    <meta name="keywords" content="Osho, Bhagwan Shree Rajneesh, discourses, English, Hindi, download, talks, spiritual teachings">
-    <link rel="canonical" href="https://pxtitan.github.io/osho/">
-    <meta property="og:title" content="Osho Discourses - English & Hindi Downloads">
-    <meta property="og:description" content="Browse, search, and download Osho's discourses in English and Hindi. Preloaded links, quick selection, easy downloads.">
-    <meta property="og:image" content="favicon/osho-512x512.png">
-    <meta property="og:url" content="https://pxtitan.github.io/osho/">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="favicon/osho-512x512.png">
-    <meta name="twitter:title" content="Osho Discourses - English & Hindi Downloads">
-    <meta name="twitter:description" content="Browse, search, and download Osho's discourses in English and Hindi.">
-    <meta name="twitter:image" content="favicon/osho-512x512.png">
-</head>
-<body>
+    <meta
+      name="description"
+      content="Download Osho discourses in English and Hindi. Browse, search, and select talks to download instantly."
+    />
+    <meta
+      name="keywords"
+      content="Osho, Bhagwan Shree Rajneesh, discourses, English, Hindi, download, talks, spiritual teachings"
+    />
+    <link rel="canonical" href="https://pxtitan.github.io/osho/" />
+    <meta
+      property="og:title"
+      content="Osho Discourses - English & Hindi Downloads"
+    />
+    <meta
+      property="og:description"
+      content="Browse, search, and download Osho's discourses in English and Hindi. Preloaded links, quick selection, easy downloads."
+    />
+    <meta property="og:image" content="favicon/osho-512x512.png" />
+    <meta property="og:url" content="https://pxtitan.github.io/osho/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="favicon/osho-512x512.png" />
+    <meta
+      name="twitter:title"
+      content="Osho Discourses - English & Hindi Downloads"
+    />
+    <meta
+      name="twitter:description"
+      content="Browse, search, and download Osho's discourses in English and Hindi."
+    />
+    <meta name="twitter:image" content="favicon/osho-512x512.png" />
+  </head>
+  <body>
     <div class="container">
-        <!-- Introduction Section -->
-        <header class="intro-section">
-            <div class="osho-photo">
-                <img src="osho.jpg" alt="Osho" id="osho-image">
-            </div>
-            <div class="intro-text">
-                <h1>Osho</h1>
-                <p>
-                    Osho, also known as Bhagwan Shree Rajneesh, was a spiritual teacher and mystic whose discourses 
-                    covered everything from the individual quest for meaning to the most urgent social and political 
-                    issues facing society today. His teachings continue to inspire millions of people worldwide.
-                </p>
-                <p>
-                    This collection provides access to his profound discourses in both English and Hindi, 
-                    allowing seekers to explore his wisdom in their preferred language.
-                </p>
-            </div>
-        </header>
-
-        <!-- Language Selection -->
-        <div class="language-selector">
-            <h2>Select Language</h2>
-            <div class="language-buttons">
-                <button class="lang-btn active" data-lang="english">English</button>
-                <button class="lang-btn" data-lang="hindi">Hindi</button>
-            </div>
+      <!-- Introduction Section -->
+      <header class="intro-section">
+        <div class="osho-photo">
+          <img src="osho.jpg" alt="Osho" id="osho-image" />
         </div>
-
-        <!-- Preloaded Notice -->
-        <div class="links-note">
-            <h3>Preloaded Discourses</h3>
-            <p>English and Hindi discourses are already loaded. Choose a language, select tracks, and download.</p>
+        <div class="intro-text">
+          <h1>Osho</h1>
+          <p>
+            Osho, also known as Bhagwan Shree Rajneesh, was a spiritual teacher
+            and mystic whose discourses covered everything from the individual
+            quest for meaning to the most urgent social and political issues
+            facing society today. His teachings continue to inspire millions of
+            people worldwide.
+          </p>
+          <p>
+            This collection provides access to his profound discourses in both
+            English and Hindi, allowing seekers to explore his wisdom in their
+            preferred language.
+          </p>
         </div>
+      </header>
 
-        <!-- Audio Container -->
-        <div class="audio-container" id="audioContainer">
-            <div class="audio-header">
-                <h2>Available Discourses</h2>
-                <div class="select-controls">
-                    <input id="searchInput" class="border-4px" type="text" placeholder="Search by title...">
-                    <button id="searchBtn" class="border-4px">Search</button>
-                    <button id="selectAll" class="border-4px">Select All</button>
-                    <button id="deselectAll" class="border-4px">Deselect All</button>
-                </div>
-            </div>
-            <div class="audio-list border-4px" id="audioList">
-                <!-- Audio items will be dynamically added here -->
-            </div>
+      <!-- Language Selection -->
+      <div class="language-selector">
+        <h2>Select Language</h2>
+        <div class="language-buttons">
+          <button class="lang-btn active" data-lang="english">English</button>
+          <button class="lang-btn" data-lang="hindi">Hindi</button>
         </div>
+      </div>
 
-        <!-- Download Button -->
-        <div class="download-section">
-            <button id="downloadBtn" class="download-btn">Download Selected</button>
-            <p class="selected-count">Selected: <span id="selectedCount">0</span></p>
+      <!-- Preloaded Notice -->
+      <div class="links-note">
+        <h3>Preloaded Discourses</h3>
+        <p>
+          English and Hindi discourses are already loaded. Choose a language,
+          select tracks, and download.
+        </p>
+      </div>
+
+      <!-- Audio Container -->
+       <h2>Available Discourses</h2>
+      <div class="audio-container" id="audioContainer">
+        
+        <div class="audio-header">
+          <div class="select-controls">
+            <input
+              id="searchInput"
+              class="border-4px"
+              type="text"
+              placeholder="Search by title..."
+            />
+            <button id="searchBtn" class="border-4px">Search</button>
+            <button id="selectAll" class="border-4px">Select All</button>
+            <button id="deselectAll" class="border-4px">Deselect All</button>
+          </div>
         </div>
+        <div class="audio-list border-4px" id="audioList">
+          <!-- Audio items will be dynamically added here -->
+        </div>
+      </div>
+
+      <!-- Download Button -->
+      <div class="download-section">
+        <button id="downloadBtn" class="download-btn">Download Selected</button>
+        <p class="selected-count">
+          Selected: <span id="selectedCount">0</span>
+        </p>
+      </div>
     </div>
 
     <script src="links.js"></script>
     <script src="script.js"></script>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>

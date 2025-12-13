@@ -320,6 +320,8 @@ body {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
+        grid-area: header;
+        border-bottom: none;
     }
 
     .language-buttons {
@@ -331,6 +333,9 @@ body {
         width: 100%;
     }
 
+    .download-btn {
+        border-radius: 4px;
+    }
     .intro-text h1 {
         font-size: 2em;
     }
@@ -343,6 +348,18 @@ body {
     .audio-container {
         max-height: 700px;
         overflow: hidden;
+        display: grid;
+        grid-template-areas:
+            "list"
+            "header"
+            /* "search" */
+        ;
+        grid-template-rows: auto auto /* auto */ ;
+        gap: 15px;
+    }
+    .audio-list {
+        grid-area: list;
+        max-height: 400px;
     }
     /* .search-input {
        
