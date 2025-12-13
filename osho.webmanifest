@@ -1,7 +1,6 @@
 {
-  "name": "Osho
-audio",
-  "short_name": "Osho-audiobooks",
+  "name": "Osho-audiobooks",
+  "short_name": "Osho",
   "icons": [
     {
       "src": "osho.jpg",
