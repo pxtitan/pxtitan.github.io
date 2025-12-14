@@ -43,6 +43,7 @@ const languageButtons = document.querySelectorAll('.lang-btn');
 const audioList = document.getElementById('audioList');
 const searchInput = document.getElementById('searchInput');
 const searchBtn = document.getElementById('searchBtn');
+const shareBtn = document.getElementById('shareBtn');
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
@@ -65,6 +66,7 @@ function setupEventListeners() {
     searchInput.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') applySearch();
     });
+    shareBtn.addEventListener('click', shareSite);
 }
 
 function applySearch() {
@@ -102,13 +104,45 @@ function renderAudioList() {
     });
 }
 
+async function shareSite() {
+    const shareData = {
+        title: 'Osho Discourses',
+        text: 'Browse and download Osho discourses (English & Hindi).',
+        url: window.location.href
+    };
+
+    if (navigator.share) {
+        try {
+            await navigator.share(shareData);
+            return;
+        } catch (err) {
+            // If user cancels, just return silently.
+            if (err && err.name === 'AbortError') return;
+        }
+    }
+
+    const url = shareData.url;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        try {
+            await navigator.clipboard.writeText(url);
+            window.alert('Link copied to clipboard.');
+            return;
+        } catch (err) {
+            // fallback below
+        }
+    }
+
+    // Final fallback: prompt so the user can copy manually.
+    window.prompt('Copy this link', url);
+}
+
 // Download a single audio via proxy (if configured)
 function downloadSingle(url) {
     const finalUrl = buildDownloadUrl(url);
     const a = document.createElement('a');
     a.href = finalUrl;
     a.download = '';
-    a.target = '_blank';
+    a.target = '_self';
     a.rel = 'noopener';
     a.style.display = 'none';
     document.body.appendChild(a);
