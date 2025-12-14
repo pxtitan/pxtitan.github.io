@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/package",
   "name": "osho-download-server",
   "version": "1.0.0",
   "description": "Proxy downloader for Osho discourse audio files.",
