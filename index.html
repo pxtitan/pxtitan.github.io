@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Osho Discourses - Download Center</title>
-    <link rel="icon" type="image/png" href="favicon/osho-512x512.png" />
-    <link rel="manifest" href="favicon/site.webmanifest" />
-    <link rel="stylesheet" href="styles.css" />
-
+    <link rel="icon" type="image/png" href="/assets/osho-512x512.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <!-- light-dark mode meta -->
+    <meta name="color-scheme" content="light dark" />
     <!-- SEO Meta Tags -->
     <meta
       name="description"
@@ -26,10 +27,10 @@
       property="og:description"
       content="Browse, search, and download Osho's discourses in English and Hindi. Preloaded links, quick selection, easy downloads."
     />
-    <meta property="og:image" content="favicon/osho-512x512.png" />
+    <meta property="og:image" content="assets/osho-512x512.png" />
     <meta property="og:url" content="https://pxtitan.github.io/osho/" />
     <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="favicon/osho-512x512.png" />
+    <meta name="twitter:card" content="assets/osho-512x512.png" />
     <meta
       name="twitter:title"
       content="Osho Discourses - English & Hindi Downloads"
@@ -38,14 +39,63 @@
       name="twitter:description"
       content="Browse, search, and download Osho's discourses in English and Hindi."
     />
-    <meta name="twitter:image" content="favicon/osho-512x512.png" />
+    <meta name="twitter:image" content="assets/osho-512x512.png" />
   </head>
   <body>
     <div class="container">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg
+          id="sun"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <!-- Sun -->
+          <g id="sun-rays">
+            <circle cx="12" cy="12" r="4" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </g>
+
+          
+        </svg>
+        <svg
+        id="moon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <!-- Moon -->
+        <path
+          id="moon"
+          d="M21 12.79A9 9 0 1 1 11.21 3
+           A7 7 0 0 0 21 12.79Z"
+          opacity="1"
+        />
+      </svg>
+      </button>
       <!-- Introduction Section -->
       <header class="intro-section">
         <div class="osho-photo">
-          <img src="osho.jpg" alt="Osho" id="osho-image" />
+          <img src="/assets/osho.jpg" alt="Osho" id="osho-image" />
         </div>
         <div class="intro-text">
           <h1>Osho</h1>
@@ -70,7 +120,6 @@
         <div class="language-buttons">
           <button class="lang-btn active" data-lang="english">English</button>
           <button class="lang-btn" data-lang="hindi">Hindi</button>
-          
         </div>
       </div>
 
@@ -103,10 +152,18 @@
           <!-- Audio items will be dynamically added here -->
         </div>
       </div>
+      <footer class="footer">
+        <p>
+          Created by
+          <a href="https://github.com/pxtitan" rel="author">pxtitan</a>. Source
+          code on
+          <a href="https://github.com/pxtitan/osho" rel="external">GitHub</a>.
+        </p>
+      </footer>
     </div>
 
-    <script src="links.js"></script>
-    <script src="script.js"></script>
-    <script src="index.js"></script>
+    <script src="/js/script.js" defer></script>
+    <script src="/js/links.js"></script>
+    <script src="/js/index.js"></script>
   </body>
 </html>

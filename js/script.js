@@ -151,3 +151,51 @@ function downloadSingle(url) {
     document.body.removeChild(a);
 }
 
+// Theme toggle functionality
+const toggleBtn = document.getElementById("themeToggle");
+const html = document.documentElement;
+
+// Load saved theme or use system preference
+const savedTheme = localStorage.getItem("theme");
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+// Function to apply theme
+function applyTheme(theme) {
+    html.setAttribute("color-scheme", theme);
+    html.style.colorScheme = theme; // This is what makes light-dark() work
+    //update icon
+    const sun=document.getElementById("sun");
+    const moon=document.getElementById("moon");
+    if(theme==="dark"){
+        sun.style.display="none";
+        moon.style.display="block";
+    } else{
+        sun.style.display="block";
+        moon.style.display="none";
+    }
+}
+
+if (savedTheme) {
+    applyTheme(savedTheme);
+} else if (systemPrefersDark) {
+    applyTheme("dark");
+} else {
+    applyTheme("light");
+}
+
+if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+        const current = html.getAttribute("color-scheme") || "light";
+        const next = current === "dark" ? "light" : "dark";
+        
+        applyTheme(next);
+        localStorage.setItem("theme", next);
+    });
+}
+
+// Listen for system theme changes
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+        applyTheme(e.matches ? 'dark' : 'light');
+    }
+});

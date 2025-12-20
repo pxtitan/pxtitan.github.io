@@ -1,0 +1,428 @@
+/*
+    Global styles for the Osho downloads SPA.
+    Sections: base, language chooser, notice, audio list/layout, per-item download icon, responsive tweaks.
+*/
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "MonoLisa";
+  src: url("/assets/MonoLisa/MonoLisa-Regular.woff2") format("woff2"),
+    url("/assets/MonoLisa/MonoLisa-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  font-family: "MonoLisa", "Courier New", Courier, monospace;
+  background-color: light-dark(#f5f5f5, #0f1115);
+  color: light-dark(#333, #e5e5e5);
+  line-height: 1.6;
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* theme toggle button */
+.theme-toggle {
+  position: relative;
+  top: 10px;
+  right: 10px;
+  margin-bottom: 20px;
+  /* background-color: light-dark(#fff, #16181d); */
+  background-color: transparent;
+  border: none;
+  /* border-radius: 8px; */
+  cursor: pointer;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  z-index: 1000;
+}
+.theme-toggle svg {
+  width: 28px;
+  height: 28px;
+  fill: light-dark(#333, #e5e5e5);
+}
+
+#moon {
+  opacity: 1;
+  animation: moon 0.5s forwards;
+  -webkit-animation: moon 0.5s forwards;
+}
+#sun {
+  opacity: 1;
+  animation: sun 0.5s forwards;
+  -webkit-animation: sun 0.5s forwards;
+}
+@keyframes moon {
+  0% {
+    transform: rotate(90deg) scale(0.6);
+    -webkit-transform: rotate(90deg) scale(0.6);
+    -moz-transform: rotate(90deg) scale(0.6);
+    -ms-transform: rotate(90deg) scale(0.6);
+    -o-transform: rotate(90deg) scale(0.6);
+  }
+  100% {
+    transform: rotate(0deg) scale(0.8);
+    -webkit-transform: rotate(0deg) scale(0.8);
+    -moz-transform: rotate(0deg) scale(0.8);
+    -ms-transform: rotate(0deg) scale(0.8);
+    -o-transform: rotate(0deg) scale(0.8);
+  }
+}
+@keyframes sun {
+  0% {
+    transform: rotate(0deg) scale(0.6);
+    -webkit-transform: rotate(0deg) scale(0.6);
+    -moz-transform: rotate(0deg) scale(0.6);
+    -ms-transform: rotate(0deg) scale(0.6);
+    -o-transform: rotate(0deg) scale(0.6);
+  }
+  100% {
+    transform: rotate(90deg) scale(0.8);
+    -webkit-transform: rotate(90deg) scale(0.8);
+    -moz-transform: rotate(90deg) scale(0.8);
+    -ms-transform: rotate(90deg) scale(0.8);
+    -o-transform: rotate(90deg) scale(0.8);
+  }
+}
+
+/* Container */
+.container {
+  /* position: relative; */
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: light-dark(#fff, #16181d);
+  padding: 40px;
+  border: 2px solid light-dark(#333, #4a4f57);
+  box-shadow: 4px 4px 0 light-dark(#333, #4a4f57);
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Introduction Section */
+.intro-section {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid light-dark(#333, #ccc);
+}
+
+.osho-photo {
+  margin-bottom: 20px;
+}
+
+.osho-photo img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid light-dark(#333, #999);
+  object-fit: cover;
+  background-color: light-dark(#e0e0e0, #1f2126);
+}
+
+.intro-text h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.intro-text p {
+  margin-bottom: 15px;
+  text-align: justify;
+  line-height: 1.8;
+}
+
+/* Language Selector */
+.language-selector {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.language-selector h2 {
+  font-size: 1.3em;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.language-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.lang-btn {
+  padding: 12px 30px;
+  font-family: "MonoLisa", "Courier New", Courier, monospace;
+  font-size: 1em;
+  background-color: light-dark(#fff, #16181d);
+  color: light-dark(#333, #e2e2e2);
+  border: 2px solid light-dark(#333, #4a4f57);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.lang-btn:hover,
+.lang-btn.active {
+  background-color: light-dark(#333, #4a4f57);
+  color: light-dark(#fff, #f5f5f5);
+}
+
+/* Links Manager */
+.links-manager {
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 2px solid light-dark(#333, #4a4f57);
+  background-color: light-dark(#fafafa, #1e2026);
+}
+
+.links-manager h3 {
+  font-size: 1em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#audioLinks {
+  width: 100%;
+  height: 150px;
+  font-family: "MonoLisa", "Courier New", Courier, monospace;
+  font-size: 0.9em;
+  padding: 10px;
+  border: 2px solid light-dark(#333, #4a4f57);
+  resize: vertical;
+  margin-bottom: 10px;
+  background-color: light-dark(#fff, #16181d);
+}
+
+#loadLinks {
+  padding: 10px 20px;
+  font-family: "MonoLisa", "Courier New", Courier, monospace;
+  font-size: 0.9em;
+  background-color: light-dark(#333, #4a4f57);
+  color: light-dark(#fff, #f2f2f2);
+  border: 2px solid light-dark(#333, #4a4f57);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+#loadLinks:hover {
+  background-color: light-dark(#555, #5a6270);
+  border-color: light-dark(#555, #5a6270);
+}
+
+.links-note {
+  margin: 20px 0;
+  padding: 12px 16px;
+  border: 1px solid light-dark(#e0e0e0, #3b4048);
+  border-radius: 8px;
+  background: light-dark(#f7f9fc, #1d1f25);
+}
+
+.links-note h3 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+}
+
+/* Audio Container */
+.audio-container {
+  margin-bottom: 30px;
+}
+
+.audio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid light-dark(#333, #ccc);
+}
+
+.audio-header h2 {
+  font-size: 1.3em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.select-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.border-4px {
+  padding: 10px 14px;
+  font-family: "MonoLisa", "Courier New", Courier, monospace;
+  font-size: 0.95em;
+  border: 2px solid light-dark(#333, #4a4f57);
+  border-radius: 4px;
+  background: light-dark(#fff, #16181d);
+  transition: all 0.2s ease;
+}
+
+.border-4px:hover {
+  border-color: light-dark(#555, #999);
+}
+
+.border-4px:focus {
+  outline: none;
+  border-color: light-dark(#333, #ccc);
+  box-shadow: 0 0 6px rgba(51, 51, 51, 0.35);
+}
+
+.select-controls input {
+  min-width: 260px;
+}
+
+.select-controls button {
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Audio List */
+.audio-list {
+  max-height: 500px;
+  overflow-y: auto;
+  border: 2px solid light-dark(#333, #4a4f57);
+  padding: 15px;
+  background-color: light-dark(#fafafa, #1d1f25);
+}
+
+.audio-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 10px;
+  background-color: light-dark(#fff, #16181d);
+  border: 1px solid light-dark(#333, #3b4048);
+  transition: all 0.2s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.audio-item:hover {
+  background-color: light-dark(#f0f0f0, #1f222a);
+  transform: translateX(5px);
+}
+
+.audio-title {
+  flex: 1;
+  font-size: 0.95em;
+  padding-right: 12px;
+}
+
+/* Per-item download button */
+.download-icon {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid light-dark(#333, #4a4f57);
+  background: light-dark(#fff, #16181d);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+.download-icon:hover {
+  background: light-dark(#333, #4a4f57);
+  color: light-dark(#fff, #f5f5f5);
+  box-shadow: 2px 2px 0 light-dark(#333, #4a4f57);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: light-dark(#999, #7a808c);
+  font-style: italic;
+}
+
+/* Scrollbar Styling */
+.audio-list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.audio-list::-webkit-scrollbar-track {
+  background: light-dark(#f1f1f1, #16181d);
+  border: 1px solid light-dark(#333, #4a4f57);
+}
+
+.audio-list::-webkit-scrollbar-thumb {
+  background: light-dark(#333, #4a4f57);
+}
+
+.audio-list::-webkit-scrollbar-thumb:hover {
+  background: light-dark(#555, #5a6270);
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.9em;
+  color: light-dark(#666, #7a808c);
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid light-dark(#ccc, #3b4048);
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .audio-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    grid-area: header;
+    border-bottom: none;
+  }
+
+  .language-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .lang-btn {
+    width: 100%;
+  }
+
+  .download-btn {
+    border-radius: 4px;
+  }
+  .intro-text h1 {
+    font-size: 2em;
+  }
+  .select-controls {
+    flex-direction: column;
+    width: 100%;
+  }
+  .audio-container {
+    max-height: 700px;
+    overflow: hidden;
+    display: grid;
+    grid-template-areas:
+      "list"
+      "header"
+      /* "search" */;
+    grid-template-rows: auto auto /* auto */;
+    gap: 15px;
+  }
+  .audio-list {
+    grid-area: list;
+    max-height: 400px;
+  }
+}
